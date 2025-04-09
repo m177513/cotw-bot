@@ -1,4 +1,3 @@
-// Version: 4.5_04_09_final
 module.exports = {
   welcome: {
     greeting: "환영합니다! 아래에서 국가(언어)를 선택해주세요.",
@@ -20,7 +19,7 @@ module.exports = {
       "📌 전체 명령어 보기: /도움말 또는 전체 안내서 확인",
       "",
       "❗ MMR 알림이 너무 자주 온다면 `/알림설정` 명령어를 통해 알림을 끌 수 있습니다.",
-    ].join('\n'),
+    ].join('\n')
   },
 
   gradeOptions: {
@@ -50,7 +49,7 @@ module.exports = {
   },
 
   thread: {
-    registerScore: "점수 등록하기",
+    registerScore: "점수 등록하기"
   },
 
   score: {
@@ -73,8 +72,12 @@ module.exports = {
     requestSent: "✅ 점수 정정 요청을 보냈습니다. <@{{opponentId}}>님의 승인이 필요합니다.",
     dmRequest: "📩 <@{{userId}}>님이 직전 경기 점수 정정을 요청했습니다. 승인하려면 /정정승인 명령어를 입력해주세요.",
     noRequest: "❌ 현재 승인할 정정 요청이 없습니다.",
-    approved: "✅ 점수 정정을 승인하였습니다. 요청자에게 알림을 보냈습니다.",
-    dmApproved: "📩 상대방이 점수 정정을 승인했습니다. /점수등록 명령어로 재입력해주세요."
+    noPending: "대기 중인 정정 요청이 없습니다.",
+    approved: "✅ 점수 정정을 승인하였습니다.",
+    dmApproved: "📩 상대방이 점수 정정을 승인했습니다. /점수등록 명령어로 재입력해주세요.",
+    rejected: "정정 요청을 거절했습니다.",
+    dmRejected: "<@{userId}>님이 정정 요청을 거절했습니다.",
+    matchMismatch: "양쪽의 경기 기록이 일치하지 않습니다."
   },
 
   notify: {
@@ -94,13 +97,14 @@ module.exports = {
     rank: "/랭킹 - 등급별 순위 확인",
     reset: "/MMR초기설정 - 기존 유저 대상 DM 재설정",
     correction: "/직전점수정정 - 이전 경기 점수 정정 요청",
+    sentToDM: "📩 DM으로 도움말을 전송했습니다."
   },
 
   ranking: {
     title: "🏆 랭킹",
     monthly: "📅 이번 달 랭킹",
     quarterly: "📊 분기별 랭킹",
-    allTime: "🌟 전체 랭킹",
+    allTime: "🌟 전체 랭킹"
   },
 
   error: {
@@ -129,7 +133,16 @@ module.exports = {
     stop: "중단하기"
   },
 
+  gameinfo: {
+    none: "등록된 게임 정보가 없습니다.",
+    yourGame: "게임",
+    tier: "등급",
+    mmr: "MMR 점수",
+    title: "현재 매칭 중인 유저",
+    casual: "캐주얼 매치"
+  },
+
   success: {
-    waiting: "✅ **{username}**님이 매칭을 기다리고 있습니다!",
+    waiting: "✅ **{username}**님이 매칭을 기다리고 있습니다!"
   }
 };

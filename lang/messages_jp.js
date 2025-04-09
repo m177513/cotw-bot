@@ -1,26 +1,25 @@
-// Version: 4.5_04_09_final
 module.exports = {
   welcome: {
-    greeting: "ようこそ！下のリストから言語を選択してください。",
-    gradeSelect: "ゲームのランクを選んでください。",
+    greeting: "ようこそ！下から言語を選択してください。",
+    gradeSelect: "ゲームランクを選択してください。",
     profileCreated: (grade, mmr) => `✅ プロフィールが作成されました！\n最終ランク：**${grade}**、初期MMR：**${mmr}ポイント**です。`,
-    guideIntro: "💡 COTW MMRシステムガイド",
+    guideIntro: "💡 COTW MMR システムガイド",
     guide: [
-      "私たちは**スキルベースのMMRシステム**を採用しています。",
-      "実力の近い相手と対戦でき、より公平なゲームが楽しめます。",
-      "- Discordを利用しなくても、ランク別の@メンション通知でマッチングを受け取れます。",
-      "- MMRを通じて**ランキングイベント**にも参加可能です。",
-      "- カジュアルマッチも自由に行えます！",
+      "私たちは **実力ベースのMMRシステム** を使用しています。",
+      "実力の近い相手と対戦でき、より公平なゲームが可能です。",
+      "- Discordにいなくても、ランク別 **@メンション通知** が届きます。",
+      "- MMRによって **ランキングイベント** にも参加できます。",
+      "- カジュアルマッチも自由に楽しめます！",
       "",
       "📌 必須コマンド",
       "/mmr - MMRマッチ申請",
       "/registerscore - 試合結果を登録",
       "/cancel - マッチング待機をキャンセル",
       "",
-      "📌 全コマンド一覧: /helpまたは完全ガイドをご覧ください。",
+      "📌 すべてのコマンドを見るには /help または完全ガイドをご確認ください。",
       "",
-      "❗ 通知が多すぎる場合、`/setnotify` で通知をオフにできます。",
-    ].join('\n'),
+      "❗ 通知が多すぎる場合は `/setnotify` コマンドでオフにできます。"
+    ].join('\n')
   },
 
   gradeOptions: {
@@ -37,20 +36,20 @@ module.exports = {
   },
 
   match: {
-    alreadyRequested: "すでにマッチングを申請済みです。",
-    searching: "🔍 対戦相手を探しています…",
-    found: "✅ マッチング成立！対戦相手: {player}",
-    repeatedOpponent: "同じ相手と3回連続でマッチングしました。続行しますか？",
-    declinedAndSearch: "対戦が拒否されました。別の相手を探しますか？",
-    matchEnded: "🔚 マッチングが終了しました。再度お試しください。",
-    nicknameOption: "ニックネームを表示しますか？ (Y/N)",
-    rejected: "❌ 対戦相手がマッチングを拒否しました。",
-    retrySearch: "🔄 別の相手を探しています…",
-    timeout: "⌛ マッチングが時間切れになりました。"
+    alreadyRequested: "すでにマッチングを申請しています。",
+    searching: "🔍 マッチング待機中です。適切な対戦相手を探しています…",
+    found: "✅ マッチ完了！対戦相手: {player}",
+    repeatedOpponent: "同じ相手と3回連続でマッチングしています。続行しますか？",
+    declinedAndSearch: "相手がマッチを拒否しました。別の相手を探しますか？",
+    matchEnded: "🔚 マッチ待機時間が終了しました。再度申請してください。",
+    nicknameOption: "ニックネームを公開しますか？（Y/N）",
+    rejected: "❌ 相手がマッチングを拒否しました。",
+    retrySearch: "🔄 別の対戦相手を探しています…",
+    timeout: "⌛ 時間切れのためマッチングを終了します。"
   },
 
   thread: {
-    registerScore: "スコアを登録する",
+    registerScore: "スコアを登録する"
   },
 
   score: {
@@ -59,77 +58,91 @@ module.exports = {
     approved: "修正リクエストが承認されました。",
     denied: "修正リクエストが拒否されました。",
     notFound: "直前の試合情報が見つかりません。",
-    changeRequested: "修正リクエストを送信しました。対戦相手の承認待ちです。",
+    changeRequested: "修正リクエストを送信しました。相手の承認を待っています。",
     noActiveMatch: "❌ 現在進行中のマッチはありません。",
-    saved: "✅ スコアが保存されました。MMRが更新されました。",
-    notMatched: "❌ 相手の提出スコアと一致しません。",
-    waitOpponent: "📨 相手がスコアを提出するまで待機します。3分後に自動保存されます。",
-    autoSaved: "⏱️ 3分経過のため自動保存されました。"
+    saved: "✅ スコアが保存され、MMRが反映されました。",
+    notMatched: "❌ 相手が提出したスコアと一致しません。",
+    waitOpponent: "📨 相手がスコアを提出するのを待っています。3分後に自動保存されます。",
+    autoSaved: "⏱️ 3分経過により自動でスコアが保存されました。"
   },
 
   fix: {
-    noHistory: "⚠️ 直近の試合履歴がありません。",
-    alreadyStarted: "⛔ すでに次の試合が開始したため修正できません。",
+    noHistory: "⚠️ 最近の試合履歴がありません。",
+    alreadyStarted: "⛔ 次の試合がすでに開始されています。修正できません。",
     requestSent: "✅ スコア修正リクエストを送信しました。<@{{opponentId}}>の承認が必要です。",
-    dmRequest: "📩 <@{{userId}}> さんが直前の試合スコア修正を要求しています。承認するには /approvefix を使用してください。",
-    noRequest: "❌ 現在承認待ちの修正リクエストはありません。",
-    approved: "✅ スコア修正を承認しました。申請者に通知済みです。",
-    dmApproved: "📩 相手がスコア修正を承認しました。/registerscore で再登録してください。"
+    dmRequest: "📩 <@{{userId}}>さんがスコア修正を要求しています。/approvefix で承認してください。",
+    noRequest: "❌ 現在承認する修正リクエストはありません。",
+    noPending: "保留中の修正リクエストはありません。",
+    approved: "✅ スコア修正を承認しました。",
+    dmApproved: "📩 相手がスコア修正を承認しました。/registerscore で再提出してください。",
+    rejected: "スコア修正リクエストを拒否しました。",
+    dmRejected: "<@{userId}>さんが修正リクエストを拒否しました。",
+    matchMismatch: "両者の試合記録が一致しません。"
   },
 
   notify: {
-    on: "🔔 マッチング通知をオンにしました。",
-    off: "🔕 マッチング通知をオフにしました。",
-    decayWarning: "⚠️ 活動がないため、間もなくMMRが下がる可能性があります！",
-    decayStart: "📉 長期間活動がなかったため、MMRが下がりました。"
+    on: "🔔 マッチ通知をオンにしました。",
+    off: "🔕 マッチ通知をオフにしました。",
+    decayWarning: "⚠️ 活動がないため、間もなくMMRが減少する可能性があります！",
+    decayStart: "📉 長期間活動がなかったため、MMRが減少しました。"
   },
 
   help: {
-    title: "🆘 コマンド一覧とヘルプ",
-    mmr: "/mmr - マッチング申請",
+    title: "🆘 コマンド案内",
+    mmr: "/mmr - MMRマッチ申請",
     score: "/registerscore - 試合結果登録",
-    cancel: "/cancel - マッチ待機をキャンセル",
-    info: "/info - 現在のマッチ確認",
+    cancel: "/cancel - マッチ申請キャンセル",
+    info: "/gameinfo - 現在の対戦状況を見る",
     alert: "/setnotify - 通知オン/オフ",
-    rank: "/ranking - ランキング確認",
+    rank: "/ranking - ランキングを見る",
     reset: "/initmmr - ウェルカムDM再送信",
-    correction: "/requestfix - スコア修正申請"
+    correction: "/requestfix - スコア修正リクエスト",
+    sentToDM: "📩 ヘルプメッセージをDMで送信しました。"
   },
 
   ranking: {
     title: "🏆 ランキング",
     monthly: "📅 今月のランキング",
     quarterly: "📊 四半期ランキング",
-    allTime: "🌟 総合ランキング"
+    allTime: "🌟 通算ランキング"
   },
 
   error: {
-    profileNotFound: "❗ プロフィールが存在しません。まず /createprofile で作成してください。",
-    cannotPlaySelf: "⚠️ 自分自身との試合は登録できません。",
-    drawNotAllowed: "⚠️ 引き分けの結果は登録できません。",
-    default: "⚠️ エラーが発生しました。後ほど再度お試しください。"
+    profileNotFound: "❗ プロフィールが見つかりません。まず /createprofile で作成してください。",
+    cannotPlaySelf: "⚠️ 自分との試合は登録できません。",
+    drawNotAllowed: "⚠️ 引き分けはスコアとして登録できません。",
+    default: "⚠️ エラーが発生しました。しばらくしてから再試行してください。"
   },
 
   initmmr: {
     success: "📩 ウェルカムDMを再送信しました！",
-    fail: "⚠️ DM送信に失敗しました。設定を確認してください。"
+    fail: "⚠️ DM送信に失敗しました。DMの設定を確認してください。"
   },
 
   stats: {
     title: "📊 活動統計",
-    mostActive: "🕹️ MMRプレイ回数TOP 5",
-    mostRequested: "📢 マッチング申請回数TOP 5"
+    mostActive: "🕹️ MMR試合数 TOP 5",
+    mostRequested: "📢 マッチ申請数 TOP 5"
   },
 
   button: {
-    requestMatch: "マッチング申請",
+    requestMatch: "マッチ申請",
     confirm: "確認",
     deny: "拒否",
-    continue: "続ける",
+    continue: "続行",
     stop: "停止"
   },
 
+  gameinfo: {
+    none: "登録されたゲーム情報がありません。",
+    yourGame: "ゲーム",
+    tier: "ランク",
+    mmr: "MMRスコア",
+    title: "現在マッチ中のユーザー",
+    casual: "カジュアルマッチ"
+  },
+
   success: {
-    waiting: "✅ **{username}**さんがマッチングを待機中です！",
+    waiting: "✅ **{username}**さんがマッチ待機中です！"
   }
 };

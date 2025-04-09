@@ -1,4 +1,3 @@
-// Version: 4.5_04_09_final
 module.exports = {
   welcome: {
     greeting: "歡迎！請從下方選擇語言。",
@@ -6,10 +5,10 @@ module.exports = {
     profileCreated: (grade, mmr) => `✅ 個人資料已建立！\n最終段位：**${grade}**，初始MMR：**${mmr}分**。`,
     guideIntro: "💡 COTW MMR 系統指南",
     guide: [
-      "我們使用**實力導向的 MMR 配對系統**。",
+      "我們使用 **實力導向的MMR配對系統**。",
       "您可以與實力相近的對手進行更公平的對戰。",
       "- 即使不使用 Discord，也能透過段位身分接收配對通知。",
-      "- 使用 MMR 可以參與**排行榜活動**。",
+      "- 使用 MMR 可參與**排行榜活動**。",
       "- 當然也可以自由進行休閒對戰！",
       "",
       "📌 常用指令",
@@ -19,8 +18,8 @@ module.exports = {
       "",
       "📌 查看全部指令：使用 /help 或開啟完整指南",
       "",
-      "❗ 通知太多？可使用 `/setnotify` 關閉提醒。",
-    ].join('\n'),
+      "❗ 通知太多？可使用 `/setnotify` 關閉提醒。"
+    ].join('\n')
   },
 
   gradeOptions: {
@@ -50,7 +49,7 @@ module.exports = {
   },
 
   thread: {
-    registerScore: "提交分數",
+    registerScore: "提交分數"
   },
 
   score: {
@@ -73,8 +72,12 @@ module.exports = {
     requestSent: "✅ 已發送更正請求，需要 <@{{opponentId}}> 的確認。",
     dmRequest: "📩 <@{{userId}}> 請求更正上一場比賽的分數。請使用 /approvefix 進行確認。",
     noRequest: "❌ 目前無待處理的更正請求。",
+    noPending: "沒有待處理的更正請求。",
     approved: "✅ 更正請求已通過，已通知對方。",
-    dmApproved: "📩 對手已同意您的更正請求。請使用 /registerscore 重新提交分數。"
+    dmApproved: "📩 對手已同意您的更正請求。請使用 /registerscore 重新提交分數。",
+    rejected: "更正請求已被拒絕。",
+    dmRejected: "<@{userId}> 已拒絕您的更正請求。",
+    matchMismatch: "雙方比賽紀錄不一致。"
   },
 
   notify: {
@@ -89,11 +92,12 @@ module.exports = {
     mmr: "/mmr - 發送配對請求",
     score: "/registerscore - 提交比賽結果",
     cancel: "/cancel - 取消等待配對",
-    info: "/info - 檢視目前配對",
-    alert: "/setnotify - 開關配對通知",
+    info: "/gameinfo - 查看目前比賽狀況",
+    alert: "/setnotify - 配對提醒開關",
     rank: "/ranking - 查看排行榜",
-    reset: "/initmmr - 重新傳送歡迎訊息",
-    correction: "/requestfix - 請求更正分數"
+    reset: "/initmmr - 重新發送歡迎訊息",
+    correction: "/requestfix - 請求更正分數",
+    sentToDM: "📩 幫助訊息已透過私訊發送。"
   },
 
   ranking: {
@@ -104,9 +108,9 @@ module.exports = {
   },
 
   error: {
-    profileNotFound: "❗ 未找到個人資料。請先使用 /createprofile 建立。",
+    profileNotFound: "❗ 未找到個人資料。請使用 /createprofile 建立。",
     cannotPlaySelf: "⚠️ 無法與自己進行比賽。",
-    drawNotAllowed: "⚠️ 無法提交平手作為分數。",
+    drawNotAllowed: "⚠️ 平手不能作為分數提交。",
     default: "⚠️ 發生錯誤，請稍後再試一次。"
   },
 
@@ -129,7 +133,16 @@ module.exports = {
     stop: "停止"
   },
 
+  gameinfo: {
+    none: "尚未註冊遊戲資料。",
+    yourGame: "遊戲",
+    tier: "段位",
+    mmr: "MMR 分數",
+    title: "目前正在配對的使用者",
+    casual: "休閒對戰"
+  },
+
   success: {
-    waiting: "✅ **{username}** 正在等待配對中！",
+    waiting: "✅ **{username}** 正在等待配對中！"
   }
 };

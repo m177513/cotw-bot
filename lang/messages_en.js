@@ -1,26 +1,25 @@
-// Version: 4.5_04_09_final
 module.exports = {
   welcome: {
-    greeting: "Welcome! Please choose your language below.",
+    greeting: "Welcome! Please select your language below.",
     gradeSelect: "Please select your game rank.",
     profileCreated: (grade, mmr) => `✅ Profile created!\nFinal grade: **${grade}**, initial MMR: **${mmr} points**.`,
     guideIntro: "💡 COTW MMR System Guide",
     guide: [
       "We use a **skill-based MMR system**.",
-      "You can play matches against opponents of similar skill for fairer games.",
-      "- Even without Discord, you can receive match alerts through rank-specific @mentions.",
+      "You can play against opponents of similar skill for fairer competition.",
+      "- Even if you're not on Discord, you can receive **tier-specific @mentions**.",
       "- You can participate in **ranking events** using your MMR.",
-      "- Casual matches are also freely available!",
+      "- Casual matches are also welcome!",
       "",
       "📌 Essential Commands",
       "/mmr - Request an MMR match",
-      "/registerscore - Submit match results",
+      "/registerscore - Submit match result",
       "/cancel - Cancel match queue",
       "",
-      "📌 See all commands: /help or view the full guide.",
+      "📌 View all commands: /help or see the full guide.",
       "",
-      "❗ Receiving too many MMR alerts? Use `/setnotify` to disable notifications.",
-    ].join('\n'),
+      "❗ Too many MMR alerts? Use `/setnotify` to turn them off."
+    ].join('\n')
   },
 
   gradeOptions: {
@@ -38,62 +37,67 @@ module.exports = {
 
   match: {
     alreadyRequested: "You've already requested a match.",
-    searching: "🔍 Searching for an opponent...",
+    searching: "🔍 Waiting for a match. Looking for a suitable opponent...",
     found: "✅ Match found! Opponent: {player}",
-    repeatedOpponent: "Matched with the same opponent 3 times. Continue?",
-    declinedAndSearch: "Your opponent declined. Search again?",
-    matchEnded: "🔚 Match request timed out. Please try again.",
+    repeatedOpponent: "You've matched with the same opponent 3 times. Continue?",
+    declinedAndSearch: "Opponent declined. Continue searching?",
+    matchEnded: "🔚 Match queue timed out. Please try again.",
     nicknameOption: "Would you like to display your nickname? (Y/N)",
-    rejected: "❌ Your opponent rejected the match.",
+    rejected: "❌ Your opponent declined the match.",
     retrySearch: "🔄 Searching for a new opponent...",
-    timeout: "⌛ Matchmaking timed out. Ending match."
+    timeout: "⌛ Time's up. Ending match queue."
   },
 
   thread: {
-    registerScore: "Submit Score",
+    registerScore: "Submit Score"
   },
 
   score: {
     confirm: "If the following information is correct, submit your score.",
-    updated: "Score has been updated.",
+    updated: "The score has been updated.",
     approved: "Correction request approved.",
     denied: "Correction request denied.",
-    notFound: "No previous match data found.",
-    changeRequested: "Correction request submitted. Awaiting opponent's approval.",
-    noActiveMatch: "❌ You don't have an active match.",
-    saved: "✅ Score saved and MMR updated.",
-    notMatched: "❌ Submitted scores do not match opponent's.",
-    waitOpponent: "📨 Waiting for your opponent to submit scores. Will auto-save after 3 minutes.",
+    notFound: "No previous match found.",
+    changeRequested: "Correction request submitted. Waiting for opponent's approval.",
+    noActiveMatch: "❌ No active match found.",
+    saved: "✅ Score saved. MMR has been updated.",
+    notMatched: "❌ Score does not match the opponent's submission.",
+    waitOpponent: "📨 Waiting for opponent's score. Will be auto-saved in 3 minutes.",
     autoSaved: "⏱️ Auto-saved after 3 minutes."
   },
 
   fix: {
-    noHistory: "⚠️ No recent match history found.",
-    alreadyStarted: "⛔ Next match already started; can't apply correction.",
-    requestSent: "✅ Correction request sent. Approval needed from <@{{opponentId}}>.",
-    dmRequest: "📩 <@{{userId}}> requested a score correction. Approve using /approvefix command.",
-    noRequest: "❌ No pending correction requests.",
-    approved: "✅ Correction request approved and requester notified.",
-    dmApproved: "📩 Your opponent approved the correction. Please resubmit scores using /registerscore."
+    noHistory: "⚠️ No recent match history.",
+    alreadyStarted: "⛔ A new match has already started. Cannot correct the previous one.",
+    requestSent: "✅ Correction request sent. <@{{opponentId}}>'s approval is required.",
+    dmRequest: "📩 <@{{userId}}> has requested a score correction. Approve it with /approvefix.",
+    noRequest: "❌ No correction request to approve.",
+    noPending: "No pending correction request.",
+    approved: "✅ Correction approved. The requester has been notified.",
+    dmApproved: "📩 Your correction was approved. Please re-submit your score using /registerscore.",
+    rejected: "Correction request denied.",
+    dmRejected: "<@{userId}> has denied your correction request.",
+    matchMismatch: "Match records do not match."
   },
 
   notify: {
-    on: "🔔 Match notifications turned ON.",
-    off: "🔕 Match notifications turned OFF.",
-    decayWarning: "⚠️ Your MMR may decrease soon due to inactivity!",
-    decayStart: "📉 Your MMR has decreased due to prolonged inactivity."
+    on: "🔔 Match notifications enabled.",
+    off: "🔕 Match notifications disabled.",
+    decayWarning: "⚠️ You may lose MMR due to inactivity soon!",
+    decayStart: "📉 Your MMR has decreased due to inactivity."
   },
 
   help: {
-    title: "🆘 Command List & Help",
-    mmr: "/mmr - Request a match",
+    title: "🆘 Full Command Guide",
+    mmr: "/mmr - Request MMR match",
     score: "/registerscore - Submit match result",
     cancel: "/cancel - Cancel match queue",
-    info: "/info - View current matches",
-    alert: "/setnotify - Turn MMR notifications ON/OFF",
-    rank: "/ranking - Check rankings",
-    reset: "/initmmr - Resend welcome DM",
-    correction: "/requestfix - Request score correction"
+    info: "/gameinfo - View current game status",
+    alert: "/setnotify - Enable/disable MMR notifications",
+    rank: "/ranking - View ranking",
+    reset: "/initmmr - Resend welcome DM to user",
+    correction: "/requestfix - Request match result correction",
+    sentToDM: "📩 Help message has been sent via DM."
   },
 
   ranking: {
@@ -104,32 +108,41 @@ module.exports = {
   },
 
   error: {
-    profileNotFound: "❗ Profile not found. Please create one with /createprofile first.",
-    cannotPlaySelf: "⚠️ You can't register a match against yourself.",
-    drawNotAllowed: "⚠️ Draw matches can't be submitted.",
-    default: "⚠️ An error occurred. Please try again shortly."
+    profileNotFound: "❗ No profile found. Please create one with /createprofile.",
+    cannotPlaySelf: "⚠️ You cannot play against yourself.",
+    drawNotAllowed: "⚠️ Draws cannot be registered.",
+    default: "⚠️ An error occurred. Please try again later."
   },
 
   initmmr: {
-    success: "📩 Welcome DM resent!",
-    fail: "⚠️ Failed to send DM. Check your DM settings."
+    success: "📩 Welcome DM has been resent!",
+    fail: "⚠️ Failed to send DM. Please check your DM settings."
   },
 
   stats: {
     title: "📊 Activity Stats",
-    mostActive: "🕹️ Top 5 most active MMR players",
-    mostRequested: "📢 Top 5 players with the most match requests"
+    mostActive: "🕹️ Top 5 most MMR matches played",
+    mostRequested: "📢 Top 5 most match requests made"
   },
 
   button: {
     requestMatch: "Request Match",
     confirm: "Confirm",
-    deny: "Deny",
+    deny: "Decline",
     continue: "Continue",
     stop: "Stop"
   },
 
+  gameinfo: {
+    none: "No registered game info.",
+    yourGame: "Game",
+    tier: "Tier",
+    mmr: "MMR",
+    title: "Users currently in match",
+    casual: "Casual Match"
+  },
+
   success: {
-    waiting: "✅ **{username}** is now waiting for a match!",
+    waiting: "✅ **{username}** is now waiting for a match!"
   }
 };
